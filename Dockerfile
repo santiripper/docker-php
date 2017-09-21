@@ -9,3 +9,5 @@ RUN sudo docker-php-ext-install -j$(nproc) gd
 RUN sudo pecl install mongodb && sudo docker-php-ext-enable mongodb
 RUN sudo pecl install geoip-beta && sudo docker-php-ext-enable geoip
 RUN composer global require "hirak/prestissimo:^0.3"
+RUN curl -sL https://deb.nodesource.com/setup_7.x | sudo -E bash -
+RUN sudo apt-get install -y nodejs
