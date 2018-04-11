@@ -6,6 +6,9 @@ RUN sudo ln -s /usr/bin/ffprobe /usr/local/bin/ffprobe && sudo ln -s /usr/bin/ff
 RUN sudo docker-php-ext-install -j$(nproc) pdo_mysql mbstring curl exif iconv hash intl json mbstring mcrypt pcntl pdo_pgsql simplexml xml zip
 RUN sudo docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/
 RUN sudo docker-php-ext-install -j$(nproc) gd
+RUN sudo docker-php-ext-install -j$(nproc) sysvmsg
+RUN sudo docker-php-ext-install -j$(nproc) sysvsem
+RUN sudo docker-php-ext-install -j$(nproc) sysvshm
 RUN sudo pecl install mongodb && sudo docker-php-ext-enable mongodb
 RUN sudo pecl install geoip-beta && sudo docker-php-ext-enable geoip
 RUN composer global require "hirak/prestissimo:^0.3"
