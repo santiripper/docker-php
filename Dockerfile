@@ -7,6 +7,7 @@ RUN sudo apt install -y apt-utils
 RUN sudo mkdir -p /usr/share/man/man1 \
      && sudo mkdir -p /usr/share/man/man7
 RUN sudo apt install -y postgresql-client-9.6 
+RUN sudo apt upgrade -y
 ##postgresql postgresql-contrib
 RUN sudo docker-php-ext-install -j$(nproc) pdo_mysql mbstring curl exif iconv hash intl json mbstring mcrypt pcntl pdo_pgsql simplexml xml zip bcmath
 RUN sudo docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/
@@ -17,6 +18,6 @@ RUN sudo docker-php-ext-install -j$(nproc) sysvshm
 RUN sudo pecl install mongodb && sudo docker-php-ext-enable mongodb
 RUN sudo pecl install geoip-beta && sudo docker-php-ext-enable geoip
 RUN composer global require "hirak/prestissimo:^0.3"
-RUN curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
+RUN curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
 RUN sudo apt-get install -y nodejs
 RUN sudo npm install cross-env -g
