@@ -1,4 +1,4 @@
-FROM circleci/php:7.1.20-cli-node-browsers
+FROM circleci/php:7.1.29-cli-node-browsers
 
 COPY config/php.ini /usr/local/etc/php/
 RUN sudo apt update && sudo apt install -y mysql-client libgeoip-dev geoip-bin geoip-database libfreetype6-dev libjpeg62-turbo-dev libssl-dev ffmpeg gifsicle pngcrush libjpeg-progs findimagedupes libpng-dev libcurl4-gnutls-dev libicu-dev libmcrypt4 libmcrypt-dev libxml2-dev libpq-dev
