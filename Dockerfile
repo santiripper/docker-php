@@ -6,6 +6,7 @@ RUN sudo apt upgrade -y
 RUN sudo apt install -y libgeoip-dev geoip-bin geoip-database libfreetype6-dev libjpeg62-turbo-dev libssl-dev ffmpeg gifsicle pngcrush libjpeg-progs findimagedupes libpng-dev libcurl4-gnutls-dev libicu-dev libmcrypt4 libmcrypt-dev libxml2-dev libpq-dev
 
 # MYSQL
+RUN sudo apt-get install lsb-release
 RUN sudo wget http://repo.mysql.com/mysql-apt-config_0.8.15-1_all.deb && sudo dpkg -i mysql-apt-config_0.8.15-1_all.deb
 RUN sudo apt-key adv --keyserver keys.gnupg.net --recv-keys 8C718D3B5072E1F5
 RUN sudo apt update && sudo apt install mysql-client
