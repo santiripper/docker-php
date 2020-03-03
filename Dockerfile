@@ -1,4 +1,4 @@
-FROM circleci/php:7.3.9-cli-node-browsers
+FROM circleci/php:7.3.13-cli-node-browsers
 
 COPY config/php.ini /usr/local/etc/php/
 RUN sudo apt update
